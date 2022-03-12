@@ -15,6 +15,9 @@ cd emsdk
 ./emsdk activate latest
 source ./emsdk_env.sh
 
+SQLite database location in the browser
+https://stackoverflow.com/questions/8936878/where-does-chrome-save-its-sqlite-database-to
+
 
 Command to compile sqlite as a web assemly reference
 
