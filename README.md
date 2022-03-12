@@ -1,4 +1,4 @@
-# Using XPO with sqlite database in blazor web assembly 
+# Using XPO with sqlite database in blazor web assembly (DotNet 6)
 
 
 Steve Sanderson talk about net 6
