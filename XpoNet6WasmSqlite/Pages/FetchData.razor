@@ -1,8 +1,8 @@
 ﻿@page "/fetchdata"
 @using DevExpress.Xpo
-@inject HttpClient Http
-@inject UnitOfWork UoW
 
+@inject UnitOfWork UoW
+@inject HttpClient Http
 <PageTitle>Weather forecast</PageTitle>
 
 <h1>Weather forecast</h1>
@@ -43,12 +43,10 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+
+      
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-        User user = new User(this.UoW);
-        user.Name = "Joche";
-        UoW.CommitChanges();
-
-
+        
     }
 
     public class WeatherForecast
