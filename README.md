@@ -2,6 +2,7 @@
 
 
 Steve Sanderson talk about net 6
+
 https://www.youtube.com/watch?v=kesUNeBZ1Os
 
 C based sqlite to compile
