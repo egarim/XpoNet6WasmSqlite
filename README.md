@@ -30,3 +30,14 @@ Command to compile sqlite as a web assemly reference
 ```<language>
 emcc sqlite3.h -shared -o e_sqlite3.o
 ```
+
+Xpo best practices,best practice #7 initializing database
+
+https://supportcenter.devexpress.com/ticket/details/a2944/xpo-best-practices
+
+Blazor Save File
+https://blazorfiddle.com/s/o8g3elz1
+
+Blazor Local Storage
+https://github.com/Blazored/LocalStorage
+

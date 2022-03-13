@@ -21,8 +21,6 @@ namespace XpoNet6WasmSqlite.Pages
         public List<User> Users { get; set; } = new List<User>();
         private void Save()
         {
-            var test=File.Exists("mydb.db");
-            Debug.WriteLine($"test{test}");
             User user = new User(this.UoW);
             user.Name = this.Name;
             UoW.CommitChanges();
@@ -32,8 +30,7 @@ namespace XpoNet6WasmSqlite.Pages
         }
         async void  DownloadFile()
         {
-           
-            this.UoW.Disconnect();
+            //this.UoW.Disconnect();
             var DbBytes=File.ReadAllBytes("mydb.db");
             await FileUtil.SaveAs(js, "mydb.db", DbBytes);
         }
@@ -41,11 +38,11 @@ namespace XpoNet6WasmSqlite.Pages
         {
             //this.UoW.Disconnect();
             var DbBytes = File.ReadAllBytes("mydb.db");
-            await localStorage.SetItemAsync<byte[]>("mydb.db", DbBytes);
+            await localStorage.SetItemAsync<byte[]>("db", DbBytes);
         }
         protected override async Task OnInitializedAsync()
         {
-            var db= await localStorage.GetItemAsync<byte[]>("mydb.db");
+            var db= await localStorage.GetItemAsync<byte[]>("db");
             if(db==null)
             {
                 File.WriteAllBytes("mydb.db", GetResource("mydb.db"));
@@ -74,7 +71,7 @@ namespace XpoNet6WasmSqlite.Pages
         }
         public byte[] GetResource(string filename)
         {
-            string result = string.Empty;
+            
 
             using (var stream = this.GetType().Assembly.
                        GetManifestResourceStream("XpoNet6WasmSqlite." + filename))
