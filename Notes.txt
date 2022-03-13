@@ -22,3 +22,10 @@ https://stackoverflow.com/questions/8936878/where-does-chrome-save-its-sqlite-da
 Command to compile sqlite as a web assemly reference
 
 emcc sqlite3.h -shared -o e_sqlite3.o
+
+
+Blazor Save File
+https://blazorfiddle.com/s/o8g3elz1
+
+Blazor Local Storage
+https://github.com/Blazored/LocalStorage
