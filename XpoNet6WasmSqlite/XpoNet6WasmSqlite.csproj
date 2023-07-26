@@ -1,34 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <!-- The following two are to suppress spurious build warnings from consuming Sqlite. These will become unnecessary when the Sqlite packages contain a dedicated WASM binary. -->
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <EmccExtraLDFlags>-s WARN_ON_UNDEFINED_SYMBOLS=0</EmccExtraLDFlags>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="mydb.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="mydb.db" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
-    <PackageReference Include="DevExpress.Xpo" Version="21.2.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.2" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.3" />
-    <NativeFileReference Include="Data\e_sqlite3.o" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+	</PropertyGroup>
+	<PropertyGroup>
+		<!-- The following two are to suppress spurious build warnings from consuming Sqlite. These will become unnecessary when the Sqlite packages contain a dedicated WASM binary. -->
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<EmccExtraLDFlags>-s WARN_ON_UNDEFINED_SYMBOLS=0</EmccExtraLDFlags>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="mydb.db" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="mydb.db" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
+		<PackageReference Include="DevExpress.Xpo" Version="21.2.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.8" PrivateAssets="all" />
+		<!--<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.2" PrivateAssets="all" />-->
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.3" />
+		<!--<NativeFileReference Include="Data\e_sqlite3.o" />-->
+	</ItemGroup>
 
-  <ItemGroup>
-    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-  </ItemGroup>
+	<ItemGroup>
+		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+	</ItemGroup>
 
 
 </Project>
